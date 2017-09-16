@@ -1,0 +1,51 @@
+{
+  "project_info": {
+    "project_number": "121709991962",
+    "firebase_url": "https://gmailauth-179817.firebaseio.com",
+    "project_id": "gmailauth-179817",
+    "storage_bucket": "gmailauth-179817.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:121709991962:android:1dd727cc057d748b",
+        "android_client_info": {
+          "package_name": "com.logic.tech.authentication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "121709991962-vr0fvr586q61tnmaaor8udpfslqjukgi.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "121709991962-g38tvhnbtdma5mcihk6q8vilj81jtoq4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA_SS29K5nEl_NpMxk5jgxiIocZ_6e5c1o"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "121709991962-vr0fvr586q61tnmaaor8udpfslqjukgi.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
