@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity implements
         GoogleApiClient.OnConnectionFailedListener {
 
 private static final String TAG = MainActivity.class.getSimpleName();
-private static final int RC_SIGN_IN = 007;
+private static final int RC_SIGN_IN = 1;
 
 private GoogleApiClient mGoogleApiClient;
 private ProgressDialog mProgressDialog;
@@ -110,7 +110,23 @@ private void handleSignInResult(GoogleSignInResult result) {
         Log.e(TAG, "display name: " + acct.getDisplayName());
 
         String personName = acct.getDisplayName();
-        String personPhotoUrl = acct.getPhotoUrl().toString();
+                String personPhotoUrl = "";
+                if(acct.getPhotoUrl() !=  null){
+                         personPhotoUrl= acct.getPhotoUrl().toString();
+                        Glide.with(getApplicationContext()).load(personPhotoUrl)
+                                .thumbnail(0.5f)
+                                .crossFade()
+                                .diskCacheStrategy(DiskCacheStrategy.ALL)
+                                .into(imgProfilePic);
+
+                }
+                else {
+                        Glide.with(getApplicationContext()).load(personPhotoUrl)
+                                .thumbnail(0.5f)
+                                .crossFade()
+                                .diskCacheStrategy(DiskCacheStrategy.ALL)
+                                .into(imgProfilePic);
+                }
         String email = acct.getEmail();
 
         Log.e(TAG, "Name: " + personName + ", email: " + email
@@ -118,12 +134,6 @@ private void handleSignInResult(GoogleSignInResult result) {
 
         txtName.setText(personName);
         txtEmail.setText(email);
-        Glide.with(getApplicationContext()).load(personPhotoUrl)
-        .thumbnail(0.5f)
-        .crossFade()
-        .diskCacheStrategy(DiskCacheStrategy.ALL)
-        .into(imgProfilePic);
-
         updateUI(true);
         } else {
         // Signed out, show unauthenticated UI.
